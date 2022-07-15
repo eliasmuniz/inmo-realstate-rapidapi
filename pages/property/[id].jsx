@@ -32,16 +32,16 @@ const PropertyDetails = ({
     {photos && <ImageScrollBar data={photos} />}
     <Box w="full" p="6">
       <Flex pt="2" alignItems="center" justifyContent="space-between">
-        <Flex alignItems="center">
+        <Flex alignItems="center" mb="20px">
           <Box pr="3" color="green.400">
             {isVerified && <GoVerified />}
           </Box>
-          <Text fontWeight="bold" fontSize="lg">
+          <Text fontWeight="bold" fontSize="2rem">
             $ {millify(price)}
             {rentFrequency && `/${rentFrequency}`}
           </Text>
           <Box>
-            <Avatar size="sm" src={agency?.logo?.url} />
+            <Avatar ml="20px" size="sm" src={agency?.logo?.url} />
           </Box>
         </Flex>
       </Flex>
@@ -63,7 +63,7 @@ const PropertyDetails = ({
             {description}
         </Text>
       </Box>
-        <Flex flexWrap="wrap" textTransform="uppercase" justifyContent="space-between">
+        <Flex mt="20px" mb="40px" flexWrap="wrap" textTransform="uppercase" justifyContent="space-between">
             <Flex justifyContent="space-between" w="400px" borderBottom="1px solid gray.100">
                 <Text>Tipo</Text>
                 <Text fontWeight="bold">{type}</Text>
@@ -86,7 +86,7 @@ const PropertyDetails = ({
                     item.amenities.map((amenity)=>(
                         <Text 
                         fontWeight="bold"
-                        color="blue.400"
+                        color="#000123"
                         fontSize="l"
                         p="2"
                         bg="gray.200"

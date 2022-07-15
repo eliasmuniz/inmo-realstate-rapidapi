@@ -51,7 +51,7 @@ const Property = ({
               $ {millify(price)}
               {rentFrequency && `/${rentFrequency}`}
             </Text>
-            <Box>
+            <Box ml="5px">
               <Avatar size="sm" src={agency?.logo?.url} />
             </Box>
           </Flex>
@@ -61,7 +61,7 @@ const Property = ({
           p="1"
           justifyContent="space-between"
           w="250px"
-          color="blue.400"
+          color="#001111"
         >
           {rooms} <FaBed /> | {baths} <FaBath /> | {millify(area)}m2{" "}
           <BsGridFill />

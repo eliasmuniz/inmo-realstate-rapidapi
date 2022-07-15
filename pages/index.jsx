@@ -51,8 +51,7 @@ export const Banner = ({
 );
 
 export default function Home({ propertiesForSale, propertiesForRent }) {
-  console.log(propertiesForSale);
-  console.log(propertiesForRent);
+
   return (
     <Box p="2%">
       <Box mb="10%">
@@ -63,7 +62,7 @@ export default function Home({ propertiesForSale, propertiesForRent }) {
             title2="Para todos"
             desc1="Encuentra casa, cabañas y departamentos"
             buttonText="Ver Propiedades"
-            linkName="/search?purpose=rent"
+            linkName="/search?purpose=for-rent"
             imageUrl={AlquilerImg.src}
           />
         </Flex>
@@ -81,7 +80,7 @@ export default function Home({ propertiesForSale, propertiesForRent }) {
             title1="Encuentra y compra por ti mismo "
             desc1="Encuentra casa, cabañas y departamentos"
             buttonText="Ver Propiedades "
-            linkName="/search?purpose=rent"
+            linkName="/search?purpose=for-sale"
             imageUrl={AlquilerImg.src}
           />
         </Flex>
