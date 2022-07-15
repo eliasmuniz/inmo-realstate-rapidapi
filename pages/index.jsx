@@ -1,9 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Flex, Box, Text, Button } from "@chakra-ui/react";
+import { Flex, Box, Text, Button, Grid } from "@chakra-ui/react";
 
 import Property from "../components/Property";
-import { baseUrl, fetchApi } from "../utils/fetchApi";
+import  { baseUrl, fetchApi } from "../utils/fetchApi";
+import AlquilerImg from "../assets/img/prop.jpg";
 
 export const Banner = ({
   imageUrl,
@@ -14,19 +15,27 @@ export const Banner = ({
   linkName,
   buttonText,
 }) => (
-  <Flex flexWrap="wrap" justifyContent="center" alignItems="center" m="10">
-    <Image src={imageUrl} width={500} height={300} alt="banner" />
+  <Flex  
+  h="80vh" 
+  w="100%" 
+  bgImage={`linear-gradient(65deg, rgba(0,0,0,1) 10%, rgba(0,0,0,0.8) 35%, rgba(0,0,0,0) 100%), url('${imageUrl}') `}
+  bgSize="cover"
+  flexWrap="wrap"
+  justifyContent="left" 
+  alignItems="center" 
+  mb="10"
+  borderRadius="15px"
+  pl="20px"
+  >
     <Box p="5">
-      <Text color="gray.500" fontSize="sm" fontWeight="medium">
+      <Text color="white" fontSize="sm" fontWeight="medium">
         {purpose}
       </Text>
-      <Text fontSize="3xl" fontWeight="bold">
-        {title1}
-        <br />
-        {title2}
+      <Text color="white" fontSize="3rem" lineHeight="3rem" m="10px 0" fontWeight="bold" w={{sm:"100%", md:"70%"}}>
+      {title1}
       </Text>
       <Text
-        color="gray.700"
+        color="white"
         fontSize="lg"
         fontWeight="medium"
         paddingTop="3"
@@ -34,7 +43,7 @@ export const Banner = ({
       >
         {desc1}
       </Text>
-      <Button fontSize="xl" size="md">
+      <Button fontSize="xl" size="md" mt="30px">
         <Link href={linkName}>{buttonText}</Link>
       </Button>
     </Box>
@@ -50,39 +59,39 @@ export default function Home({ propertiesForSale, propertiesForRent }) {
         <Flex>
           <Banner
             purpose="ALQUILA UNA CASA"
-            title="Alquiler de casas "
+            title1="Alquila de forma simple y rápida "
             title2="Para todos"
             desc1="Encuentra casa, cabañas y departamentos"
             buttonText="Ver Propiedades"
             linkName="/search?purpose=rent"
-            imageUrl="https://bayut-production.s3.eu-central-1.amazonaws.com/image/145426814/33973352624c48628e41f2ec460faba4"
+            imageUrl={AlquilerImg.src}
           />
         </Flex>
-        <Flex flexWrap="wrap">
+        <Grid templateColumns='repeat(3, 1fr)' gap={6} >
           {/*Fetch the properties and map over them*/}
           {propertiesForRent.map((property) => (
             <Property property={property} key={property.id} />
           ))}
-        </Flex>
+        </Grid>
       </Box>
       <Box>
         <Flex>
           <Banner
             purpose="COMPRAR UNA CASA"
-            title="Encuentra y compra por ti mismo "
-            title2="Mudate ahora"
+            title1="Encuentra y compra por ti mismo "
             desc1="Encuentra casa, cabañas y departamentos"
             buttonText="Ver Propiedades "
             linkName="/search?purpose=rent"
-            imageUrl="https://bayut-production.s3.eu-central-1.amazonaws.com/image/145426814/33973352624c48628e41f2ec460faba4"
+            imageUrl={AlquilerImg.src}
           />
         </Flex>
-        <Flex flexWrap="wrap">
-          {/*Fetch the properties and map over them*/}
-          {propertiesForSale.map((property) => (
+        <Grid templateColumns='repeat(3, 1fr)' gap={6} >
+             {/*Fetch the properties and map over them*/}
+             {propertiesForSale.map((property) => (
             <Property property={property} key={property.id} />
           ))}
-        </Flex>
+        </Grid>
+      
       </Box>
     </Box>
   );

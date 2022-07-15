@@ -25,21 +25,23 @@ const Property = ({
   <Link href={`/property/${externalID}`} passHref>
     <Flex
       flexWrap="wrap"
-      w="420px"
-      p="5"
+      w="100%"
       pt="0"
+      pb="5"
+      mb="5"
       justifyContent="flex-start"
       cursor="pointer"
+      boxShadow="1px 1px 20px 0px rgba(0,0,0,0.15)"
+      borderRadius="15px"
     >
-      <Box>
-        <Image
-          src={coverPhoto ? coverPhoto.url : DefaultImage}
-          alt="casa"
-          width={400}
-          height={260}
-        />
+      <Box width="100%">
+          <img 
+          src={coverPhoto ? coverPhoto.url : DefaultImage} 
+          alt=""
+          style={{width: "100%", height: "320px", objectFit: "cover", borderRadius: "15px 15px 0 0"}} 
+          />
       </Box>
-      <Box w="full">
+      <Box w="full"  bg="#fff" p="5px 10px" >
         <Flex pt="2" alignItems="center" justifyContent="space-between">
           <Flex alignItems="center">
             <Box pr="3" color="green.400">
