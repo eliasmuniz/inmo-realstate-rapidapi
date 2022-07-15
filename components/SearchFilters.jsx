@@ -63,7 +63,7 @@ const SearchFilters = () => {
         <Box key={filter.queryName}>
           <Select onChange={(e) => searchProperties({ [filter.queryName]: e.target.value })} placeholder={filter.placeholder} w='fit-content' p='2' >
             {filter?.items?.map((item) => (
-              <option value={item.value} key={item.value}>
+              <option key={item.value} value={item.value} >
                 {item.name}
               </option>
             ))}

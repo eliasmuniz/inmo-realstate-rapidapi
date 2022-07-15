@@ -39,7 +39,7 @@ const Search = ({ properties }) => {
       <Grid templateColumns="repeat(3, 1fr)" gap={6}>
         {/*Fetch the properties and map over them*/}
         {properties.map((property) => (
-          <Property property={property} ket={property.id} />
+          <Property property={property} key={property.id} />
         ))}
       </Grid>
 
