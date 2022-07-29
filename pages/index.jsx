@@ -66,7 +66,7 @@ export default function Home({ propertiesForSale, propertiesForRent }) {
             imageUrl={AlquilerImg.src}
           />
         </Flex>
-        <Grid templateColumns='repeat(3, 1fr)' gap={6} >
+        <Grid templateColumns={{base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)', lg: 'repeat(2, 1fr)'}} gap={6} >
           {/*Fetch the properties and map over them*/}
           {propertiesForRent.map((property) => (
             <Property property={property} key={property.id} />
@@ -84,7 +84,7 @@ export default function Home({ propertiesForSale, propertiesForRent }) {
             imageUrl={AlquilerImg.src}
           />
         </Flex>
-        <Grid templateColumns='repeat(3, 1fr)' gap={6} >
+        <Grid templateColumns={{base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)', lg: 'repeat(2, 1fr)'}} gap={6} >
              {/*Fetch the properties and map over them*/}
              {propertiesForSale.map((property) => (
             <Property property={property} key={property.id} />

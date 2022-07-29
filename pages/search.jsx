@@ -36,7 +36,7 @@ const Search = ({ properties }) => {
       <Text fontSize="2xl" p="4" fontWeight="bold">
         Propiedades {router.query.purposeES}
       </Text>
-      <Grid templateColumns="repeat(3, 1fr)" gap={6}>
+      <Grid templateColumns={{base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)', lg: 'repeat(2, 1fr)'}} gap={6}>
         {/*Fetch the properties and map over them*/}
         {properties.map((property) => (
           <Property property={property} key={property.id} />
